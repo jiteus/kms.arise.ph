@@ -12,16 +12,16 @@ code {
     monospace;
 }
 
+h1{
+  font-size: 2em;
+  text-align: center;
+  color: rgb(0, 77, 142);
+}
+
 .bg-light-blue {
 
-  width: 20rem;
-  height: 20rem;
-
+  width: 200px;
+  height: 200px;
 }
 
-.bg-light-blue img{
 
-  max-width: 10rem;
-  max-height: 10rem;
-
-}
