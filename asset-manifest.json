@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/arise.ph/static/css/main.32968e16.chunk.css",
+    "main.js": "/arise.ph/static/js/main.f75b25cb.chunk.js",
+    "main.js.map": "/arise.ph/static/js/main.f75b25cb.chunk.js.map",
+    "runtime-main.js": "/arise.ph/static/js/runtime-main.923c70b9.js",
+    "runtime-main.js.map": "/arise.ph/static/js/runtime-main.923c70b9.js.map",
+    "static/css/2.31461e4f.chunk.css": "/arise.ph/static/css/2.31461e4f.chunk.css",
+    "static/js/2.1b730985.chunk.js": "/arise.ph/static/js/2.1b730985.chunk.js",
+    "static/js/2.1b730985.chunk.js.map": "/arise.ph/static/js/2.1b730985.chunk.js.map",
+    "static/js/3.816d8bee.chunk.js": "/arise.ph/static/js/3.816d8bee.chunk.js",
+    "static/js/3.816d8bee.chunk.js.map": "/arise.ph/static/js/3.816d8bee.chunk.js.map",
+    "index.html": "/arise.ph/index.html",
+    "static/css/2.31461e4f.chunk.css.map": "/arise.ph/static/css/2.31461e4f.chunk.css.map",
+    "static/css/main.32968e16.chunk.css.map": "/arise.ph/static/css/main.32968e16.chunk.css.map",
+    "static/js/2.1b730985.chunk.js.LICENSE.txt": "/arise.ph/static/js/2.1b730985.chunk.js.LICENSE.txt",
+    "static/media/Project.css": "/arise.ph/static/media/OverpassMono-Regular.55f03a11.ttf"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.923c70b9.js",
+    "static/css/2.31461e4f.chunk.css",
+    "static/js/2.1b730985.chunk.js",
+    "static/css/main.32968e16.chunk.css",
+    "static/js/main.f75b25cb.chunk.js"
+  ]
+}
