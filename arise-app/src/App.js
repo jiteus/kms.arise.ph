@@ -18,20 +18,25 @@ class App extends Component {
         }
     }
 
-    onSearchChange(event){
-        console.log(event.target.value);
-    }
+    onSearchChange = (event) => {
+        this.setState({searchfield: event.target.value})
+        }
+       
+    
     
     render () {
+        const filterSdg = this.state.sdg.filter(sdg => {
+            return sdg.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        })
         return (
             <div className='tc'>
                 <h2>The Global Goals for Sustainable Development by 2030</h2>
                 <SearchBox searchChange={this.onSearchChange}/>
-                <CardList sdg={sdg}/>
+                <CardList sdg={filterSdg}/>
             </div>
         );
     }
-}
 
+}
 
 export default App;
