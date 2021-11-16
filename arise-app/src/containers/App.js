@@ -5,7 +5,7 @@ import ProjectList from '../components/ProjectList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './Project.css';
-
+import ErrBoundry from '../components/ErrBoundry';
 
 class App extends Component {
     constructor() {
@@ -31,20 +31,22 @@ class App extends Component {
         const filterProjects = projects.filter(project => {
             return project.project_title.toLowerCase().includes(this.state.searchfield.toLowerCase());
         })
-        if(projects.length === 0 ){
-            return <h1>Loading</h1>
-        } else {
-            return (
+
+        return !projects.length ?
+            <h1>Loading</h1> : 
+            (
                 <div className='tc'>
-                    <h2 className='f2'>My Projects</h2>
+                    <h2 className='f2'>My Projects ({projects.length})</h2>
                     <SearchBox searchChange={this.onSearchChange}/>
                     <Scroll>
+                    <ErrBoundry>
                         <ProjectList projects={filterProjects}/>
+                    </ErrBoundry>    
                     </Scroll>
                 </div>
             );
 
-        }
+        
         
     }
 

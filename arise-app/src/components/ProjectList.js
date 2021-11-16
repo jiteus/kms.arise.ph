@@ -3,6 +3,7 @@ import ProjectCard from "./ProjectCard";
 
 
 const ProjectList = ({projects}) =>{
+    
     return (
         <div>
             {
