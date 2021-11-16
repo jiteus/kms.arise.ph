@@ -1,0 +1,29 @@
+@font-face{
+    font-family: 'OVERPASS MONO FONT';
+    font-style: normal;
+    font-weight: normal;
+    src: local('OVERPASS MONO FONT'), url('OverpassMono-Regular.ttf'), format('ttf');    
+    
+}
+    
+h1{ 
+    font-size: 2em;
+    text-align: center;
+    color: rgb(0, 77, 142);
+  }
+  
+h2{
+    font-family: 'OVERPASS MONO FONT';
+    font-weight: 200;
+    color: antiquewhite;
+}
+
+p{
+    font-family: 'OVERPASS MONO FONT';
+}
+  
+  .bg-light-blue {
+  
+    width: 200px;
+    height: 200px;
+  }
