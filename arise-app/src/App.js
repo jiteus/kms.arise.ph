@@ -1,22 +1,22 @@
 
 import React, {Component} from 'react';
-import { sdg } from './sdg';
-import CardList from './CardList';
+import { projects } from './projects';
+import ProjectList from './ProjectList';
 import SearchBox from './SearchBox';
-import './App.css';
+import './Project.css';
 
-const state = {
-    sdg: sdg,
-    searchfield: ''
-}
 
 class App extends Component {
     constructor() {
         super()
         this.state = {
-            sdg: sdg,
+            projects: [],
             searchfield: ''
         }
+    }
+
+    componentDidMount() {
+        this.setState({projects: projects})
     }
 
     onSearchChange = (event) => {
@@ -26,14 +26,14 @@ class App extends Component {
     
     
     render () {
-        const filterSdg = this.state.sdg.filter(sdg => {
-            return sdg.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+        const filterProjects = this.state.projects.filter(projects => {
+            return projects.project_title.toLowerCase().includes(this.state.searchfield.toLowerCase());
         })
         return (
             <div className='tc'>
-                <h2 className='f2'>The Global Goals for Sustainable Development by 2030</h2>
+                <h2 className='f2'>My Projects</h2>
                 <SearchBox searchChange={this.onSearchChange}/>
-                <CardList sdg={filterSdg}/>
+                <ProjectList projects={filterProjects}/>
             </div>
         );
     }
