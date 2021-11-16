@@ -13,7 +13,9 @@ const Navigation = () => {
                 </div>
             </Tilt>            
          </div>
-         
+         <div>
+            <h3>You are logged in as username</h3>
+         </div>
          </nav>
      );
 }

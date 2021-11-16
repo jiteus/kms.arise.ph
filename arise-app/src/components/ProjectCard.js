@@ -10,6 +10,7 @@ const ProjectCard = ({
     project_desc,
     sdgt_name,
     project_location,
+    project_memorg
     }) => {
     return (
         
@@ -17,6 +18,7 @@ const ProjectCard = ({
             <div>
                 
                 <h1>{project_title}</h1>
+                <p>By {project_memorg}</p>
                 <em><h2>A {project_type} {project_status} for {sdgt_name} </h2></em>
                 <h3>Location: {project_location}</h3>
                 <p>{project_desc}</p>

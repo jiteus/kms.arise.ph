@@ -31,6 +31,7 @@ h2{
 
 h3 {
   color: rgb(0, 77, 142);
+  text-transform:uppercase;
 }
 
 p{
@@ -41,5 +42,27 @@ p{
   
   width: 200px;
   height: 200px;
+}
+
+button {
+  padding: 3px;
+  margin: 2px;
+  min-width: 30%;
+  cursor: pointer;
+  background-color: rgb(11, 9, 104);
+  color: white;
+}
+
+input {
+  min-width: 70%;
+}
+
+.particles{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
 }
 

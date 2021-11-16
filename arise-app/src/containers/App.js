@@ -18,7 +18,8 @@ class App extends Component {
         super()
         this.state = {
             projects: [],
-            searchfield: ''
+            searchfield: '',
+            input:''
         }
     }
 
@@ -30,7 +31,15 @@ class App extends Component {
         this.setState({searchfield: event.target.value})
         }
        
-    
+    onInputChange = (event) => {
+        this.setState({input: event.target.value});
+    }
+
+    onButtonSubmit = () => {
+        console.log('clicked Submit');
+        alert('Form Submitted. Thank you!');
+
+    }
     
     render () {
         const {projects, searchfield} = this.state;
@@ -42,7 +51,8 @@ class App extends Component {
         return !projects.length ?
             <h1>Loading</h1> : 
             (
-                <div>
+                <div className='App'>
+                
                 <div style={{display: 'flex', justifyContent: 'space-between'}}>
                     <Navigation />
                     {/* <SearchFilter /> */}
@@ -62,7 +72,10 @@ class App extends Component {
                         </Scroll>
                         <Scroll>
                         <h1>New Project Submission</h1>
-                            <AddProjectForm />
+                            <AddProjectForm 
+                                onInputChange={this.onInputChange}
+                                onButtonSubmit={this.onButtonSubmit}
+                            />
                         </Scroll>  
                     </div>
                 </div>

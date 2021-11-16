@@ -27,6 +27,7 @@ const ProjectList = ({projects}) =>{
                             project_aend={projects[i].project_aend}
                             project_tpeople={projects[i].project_tpeople}
                             project_apeople={projects[i].project_apeople}
+                            project_memorg={projects[i].project_memorg}
                             
                         />
                     ); 
