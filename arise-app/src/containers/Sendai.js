@@ -1,8 +1,8 @@
 
 import React, {Component} from 'react';
-import { sdg } from './sdg';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
+import { sdg } from '../sdg';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
 import './App.css';
 
 const state = {

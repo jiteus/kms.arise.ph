@@ -6,7 +6,7 @@ const ProjectList = ({projects}) =>{
     return (
         <div>
             {
-                projects.map((user,i) => {
+                projects.map((project,i) => {
                     return (
                         <ProjectCard
                             key={i}
