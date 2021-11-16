@@ -1,10 +1,15 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
     
+}
+
+@font-face{
+  font-family: 'OVERPASS MONO FONT';
+  font-style: normal;
+  font-weight: normal;
+  src: local('OVERPASS MONO FONT'), url('containers/OverpassMono-Regular.ttf'), format('ttf');    
+  
 }
 
 code {
@@ -21,7 +26,7 @@ h1{
 h2{
   font-family: 'OVERPASS MONO FONT';
   font-weight: 200;
-  color: antiquewhite;
+  color: #AF1D32;
 }
 
 h3 {
@@ -32,4 +37,9 @@ p{
   font-family: 'OVERPASS MONO FONT';
 }
 
+.bg-light-blue {
+  
+  width: 200px;
+  height: 200px;
+}
 

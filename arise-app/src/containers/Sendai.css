@@ -1,13 +1,4 @@
-@font-face{
-    font-family: 'OVERPASS MONO FONT';
-    font-style: normal;
-    font-weight: normal;
-    src: local('OVERPASS MONO FONT'), url('OverpassMono-Regular.ttf'), format('ttf');    
-    background: linear-gradient(to right, #AF1D32 0%, #04AAA0 100%);
+body{
+  background: linear-gradient(to right, #AF1D32 0%, #04AAA0 100%);
 }
       
-  .bg-light-blue {
-  
-    width: 200px;
-    height: 200px;
-  }
