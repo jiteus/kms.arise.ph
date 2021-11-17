@@ -2,14 +2,15 @@
 import React, {Component} from 'react';
 import { projects } from '../projects';
 import { sdg } from '../sdg';
-import ProjectList from '../components/ProjectList';
-import CardList from '../components/CardList';
+import ProjectList from '../components/Projects/ProjectList';
+import CardList from '../components/Sendai/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './App.css';
 import ErrBoundry from '../components/ErrBoundry';
 import Navigation from '../components/Navigation/Navigation';
 import AddProjectForm from '../components/AddProjectForm/AddProjectForm';
+import Footer from '../components/Footer';
 
 
 
@@ -53,20 +54,22 @@ class App extends Component {
             (
                 <div className='App'>
                 
-                <div style={{display: 'flex', justifyContent: 'space-between'}}>
+                <div >
                     <Navigation />
+                    
+                </div>
+                    <div className='tc'>
                     {/* <SearchFilter /> */}
                     <SearchBox searchChange={this.onSearchChange}/>
-                    <p className='f3 link dim black underline pa3 pointer'>Sign Out</p></div>
-                    <div className='tc'>
-                        <h1 className='f2'>My Projects ({projects.length})</h1>
                         
-                        <Scroll>
+                        
+                        <Scroll style={{height:'400px'}}>
                             <ErrBoundry>
+                                <h1 className='f2'>My Projects ({projects.length})</h1>
                                 <ProjectList projects={filterProjects}/>
                             </ErrBoundry>    
                         </Scroll>
-                        <Scroll>
+                        <Scroll style={{height:'200px'}}>
                         <h1>The Sustainable Development Goals</h1>
                             <CardList sdg={sdg}/>
                         </Scroll>
@@ -76,7 +79,8 @@ class App extends Component {
                                 onInputChange={this.onInputChange}
                                 onButtonSubmit={this.onButtonSubmit}
                             />
-                        </Scroll>  
+                        </Scroll>
+                        <Footer />  
                     </div>
                 </div>
             );

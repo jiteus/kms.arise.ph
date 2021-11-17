@@ -14,3 +14,7 @@ h2 {
     display: flex;
     justify-content: center;
 }
+
+.featured {
+    background-image: url('https://i.ytimg.com/vi/rRGk4ZvZ0Vo/maxresdefault.jpg');
+}

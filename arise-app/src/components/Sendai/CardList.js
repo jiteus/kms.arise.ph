@@ -5,15 +5,15 @@ const CardList = ({sdg}) =>{
     return (
         <div>
             {
-                sdg.map((user,i) => {
+                sdg.map((monitor,i) => {
                     return (
                         <SDGCard
                             key={i}
                             id={sdg[i].id}
                             name={sdg[i].name}
-                            // desc={sdg[i].desc}
-                            // tracker={sdg[i].tracker}
-                            // logo={sdg[i].logo}
+                            desc={sdg[i].desc}
+                            tracker={sdg[i].tracker}
+                            logo={sdg[i].logo}
                         />
                     ); 
                 })

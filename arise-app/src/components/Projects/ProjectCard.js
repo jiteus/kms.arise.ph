@@ -14,7 +14,7 @@ const ProjectCard = ({
     }) => {
     return (
         
-        <div className='bg-light-black dib br1 pa2 ma1 grow bw2 shadow-5'>
+        <div className='bg-light-black dib br1 pa2 ma1 grow bw2 shadow-5 bg-white-80 hover-bg-lightest-blue'>
             <div>
                 
                 <h1>{project_title}</h1>

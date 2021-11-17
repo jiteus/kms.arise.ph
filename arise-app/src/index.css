@@ -40,8 +40,8 @@ p{
 
 .bg-light-blue {
   
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 180px;
 }
 
 button {
@@ -57,6 +57,10 @@ input {
   min-width: 70%;
 }
 
+label {
+  min-width: 30%;
+}
+
 .particles{
   position: fixed;
   top: 0;
@@ -66,3 +70,13 @@ input {
   z-index: -1;
 }
 
+header {
+  height: 250px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+footer {
+  background-image: url('https://i.ytimg.com/vi/rRGk4ZvZ0Vo/maxresdefault.jpg');
+  background-position-x: left;
+}

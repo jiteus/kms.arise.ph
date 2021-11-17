@@ -1,13 +1,14 @@
 import React from 'react';
 
-const SDGCard = ({id, name}) => {
+const SDGCard = ({tracker, logo}) => {
     return (
         
         <div className='bg-light-blue dib br2 pa2 ma1 grow bw2 shadow-5'>
             <div>
-                
-                <h1>{id}</h1>
-                <p>{name}</p>
+            <a href={tracker} target='_blank' rel='noreferrer'>
+            <img src={logo} alt='{desc}'/>
+            </a>
+
             </div>
         </div>
     );

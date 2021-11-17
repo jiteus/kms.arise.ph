@@ -5,7 +5,7 @@ import ProjectCard from "./ProjectCard";
 const ProjectList = ({projects}) =>{
     
     return (
-        <div>
+        <div className='featured'>
             {
                 projects.map((project,i) => {
                     return (
