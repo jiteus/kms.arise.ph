@@ -36,6 +36,16 @@ const AddProjectForm = ({onInputChange, onButtonSubmit}) => {
                     </div>
                     </fieldset>
                     <fieldset>
+
+                        <div>
+                            <label for="inputProjDesc" class="f4 b db mb2">Project Description <span class="normal black-60">(required)</span></label>
+                            <small id="projdesc-desc" class="f6 black-60">Enter a brief summary of your project. 
+                            {/* Can use this text to <a href="#" class="link underline black-80 hover-blue">link to more info.</a> */}
+                            </small>
+                            <textarea id="project_desc" name="inputProjDesc" class="db border-box hover-black w-100 ba b--black-20 pa2 br2 mb2" aria-describedby="projdesc-desc"></textarea>
+                            
+                        </div>
+
                         <label for='selectProjType' className="f4 b db mb2">Project Type <span className="normal black-60">(required)</span></label>
                         <select className='ba b--black-20 pa2 mb2 db w-100'>
                                 <option value="">Select option from dropdown</option>
@@ -95,15 +105,26 @@ const AddProjectForm = ({onInputChange, onButtonSubmit}) => {
                     </fieldset>
 
                     <fieldset>
-                        <div>
-                            <label for="inputProjDesc" class="f4 b db mb2">Project Description <span class="normal black-60">(required)</span></label>
-                            <textarea id="project_desc" name="inputProjDesc" class="db border-box hover-black w-100 ba b--black-20 pa2 br2 mb2" aria-describedby="projdesc-desc"></textarea>
-                            <small id="projdesc-desc" class="f6 black-60">Enter a brief summary of your project. Can use this text to <a href="#" class="link underline black-80 hover-blue">link to more info.</a></small>
-                        </div>
+                    <label for="inputLocation" className="f4 b db mb2">Target Location <span className="normal black-60">(required)</span></label>
+                        <input id="inputLocation" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="text" aria-describedby="location-desc"/>
+                        <small id="location-desc" className="f6 black-60 db mb3">Helper text for the form control.</small>
+
+                        <label for="inputTStart" className="f4 b db mb2">Target Start Date <span className="normal black-60">(required)</span></label>
+                        <input id="inputTStart" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="date" aria-describedby="tstart-desc"/>
+                        <small id="tstart-desc" className="f6 black-60 db mb3">Helper text for the form control.</small>
+
+                        <label for="inputTEnd" className="f4 b db mb2">Target End Date <span className="normal black-60">(required)</span></label>
+                        <input id="inputTEnd" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="date" aria-describedby="tenddate-desc"/>
+                        <small id="tend-desc" className="f6 black-60 db mb3">Helper text for the form control.</small>
+
+                        <label for="inputTPeople" className="f4 b db mb2">Target Beneficiaries <span className="normal black-60">(optional)</span></label>
+                        <input id="inputTPeople" className="input-reset ba b--black-20 pa2 mb2 db w-100" type="number" aria-describedby="tpeople-desc"/>
+                        <small id="tpeople-desc" className="f6 black-60 db mb3">Please enter number of people to benefit</small>
+                        
                     </fieldset>
 
 
-                    <button onClick={onButtonSubmit}> Submit </button>
+                    <button onClick={onButtonSubmit}> Submit Project </button>
                 </form>
             </div>
         </div>

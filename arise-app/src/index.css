@@ -78,5 +78,12 @@ header {
 
 footer {
   background-image: url('https://i.ytimg.com/vi/rRGk4ZvZ0Vo/maxresdefault.jpg');
-  background-position-x: left;
+  background-position-x: right;
+  background-size: 50%;
+  background-repeat: no-repeat;
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
 }

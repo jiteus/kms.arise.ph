@@ -1,20 +1,27 @@
 import React from "react";
+import Facebook from '../images/facebook.png';
+import Twitter from '../images/twitter.png';
+import Instagram from '../images/instagram.png';
+import Email from '../images/email.png';
 
 
 const Footer = () => {
     return (
     
-    <footer class="pv4 ph3 ph5-m ph6-l black tc">
-        <small class="f6 db tc">© 2022 <b class="ttu">ARISE PHILIPPINES</b>., All Rights Reserved</small>
-        <div class="tc mt3">
+    <footer className="pv4 ph3 ph5-m ph6-l black tc">
+        <small className="f6 db tc">© 2022 <b className="ttu">ARISE PHILIPPINES</b>., All Rights Reserved</small>
+        <div className="tc mt3 w-100">
+                       
+            <a href="mailto:secretariat@arise.ph"  title="Email" className="link f6 dib ph2 link dim">
+            <img className='icon'src={Email} alt='Email'></img></a>
+            <a href="https://facebook.com"  title="Facebook" className="link f6 dib ph2 link dim">
+            <img className='icon'src={Facebook} alt='Facebook'></img></a>
+            <a href="https://twitter.com"  title="Twitter" className="link f6 dib ph2 link dim">
+            <img className='icon'src={Twitter} alt='Twitter'></img></a>
+            <a href="https://instagram.com"  title="Instagram" className="f6 dib ph2 link dim">
+            <img className='icon'src={Instagram} alt='Instagram'></img></a>
+
             
-            <a href="/language/" title="Partners" class="f6 dib ph2 link black dim">Members</a>
-            <a href="/terms/"    title="Terms" class="f6 dib ph2 link black dim">Terms of Use</a>
-            <a href="/privacy/"  title="Privacy" class="f6 dib ph2 link black dim">Privacy</a>
-           
-            <a href="https://facebook.com"  title="Facebook" class="f6 dib ph2 link black dim">Facebook</a>
-            <a href="https://twitter.com"  title="Twitter" class="f6 dib ph2 link black dim">Twitter</a>
-            <a href="https://instagram.com"  title="Instagram" class="f6 dib ph2 link black dim">Instagram</a>
         </div>
 
     </footer>
