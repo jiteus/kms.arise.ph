@@ -182,7 +182,7 @@ app.post('/register', ( req , res ) => {
     res.json(database.users[database.users.length-1]);
 })
 
-app.post('/form', ( req , res ) => {
+app.put('/profile/:id/form', ( req , res ) => {
     const { id, title, type, desc, status, category, sdg, location, start, end} = req.body;
     let found = false;
     database.users.forEach(user => {
@@ -211,7 +211,7 @@ app.post('/form', ( req , res ) => {
 
 })
 
-app.get('/project/:id', ( req  , res ) => {
+app.get('/profile/:id/project/:id', ( req  , res ) => {
     const { id } = req.params;
     let found = false;
     database.users.forEach(user => {
