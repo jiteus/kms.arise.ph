@@ -4,7 +4,7 @@ import './Navigation.css';
 import logo from './logo.png';
 // import avatar from './avatar.png';
 
-const Navigation = () => {
+const Navigation = ({onRouteChange}) => {
      return (
          <header>
             {/* <div>
@@ -16,7 +16,7 @@ const Navigation = () => {
                 <div>                                
                     <a href="https://arise.ph" title="Home">
                         <Tilt className="Tilt br2 pa2 ma3 shadow-2" options={{ max : 25 }} style={{ height: 100, width: 400 }}>
-                            <div classname='Tilt-inner'>
+                            <div className='Tilt-inner'>
                                 <img style={{paddingTop: '3 px', paddingBottom: '3px', marginBottom:'5px'}} alt='kms.arise.ph' src={logo}/>
                             </div>
                         </Tilt>
@@ -29,7 +29,7 @@ const Navigation = () => {
                     <a className="link dim black f3 f4-l dib mr2 mr3-l" href="https://arise.ph" title="Dashboard">Dashboard</a>
                     <a className="link dim black f3 f4-l dib mr2 mr3-l" href="https://arise.ph" title="Projects">Projects</a>
                     <a className="link dim black f3 f4-l dib mr2 mr3-l" href="https://arise.ph" title="Forum">Forum</a>
-                    <a className="link dim black f3 f4-l dib mr2 mr3-l" href="https://arise.ph" title="Sign Out">Sign Out</a>
+                    <p onClick={() => onRouteChange('signin')} className="link dim black f3 f4-l dib mr2 mr3-l" href="https://arise.ph" title="Sign Out">Sign Out</p>
                 </div>
                
             </nav>

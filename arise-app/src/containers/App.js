@@ -14,6 +14,7 @@ import Footer from '../components/Footer';
 
 
 
+
 class App extends Component {
     constructor() {
         super()
@@ -24,22 +25,40 @@ class App extends Component {
         }
     }
 
+
     componentDidMount() {
         this.setState({projects: projects})
+    }
+
+    loadUser = (data) => {
+        this.setState({user:{
+            id: data.id,
+            name: data.name,
+            email: data.email,
+            password: '*******',
+            role: data.role,
+            org: data.org,
+            joined: data.joined,
+            projects:data.projects
+        }})
     }
 
     onSearchChange = (event) => {
         this.setState({searchfield: event.target.value})
         }
        
-    onInputChange = (event) => {
-        this.setState({input: event.target.value});
-    }
+    // onInputChange = (event) => {
+    //     this.setState({input: event.target.value});
+    // }
 
-    onButtonSubmit = () => {
-        console.log('clicked Submit');
-        alert('Form Submitted. Thank you!');
+    // onButtonSubmit = () => {
+    //     console.log('clicked Submit');
+    //     alert('Form Submitted. Thank you!');
 
+    // }
+
+    onRouteChange = () => {
+        this.setState({route: 'home'});
     }
     
     render () {
@@ -55,7 +74,7 @@ class App extends Component {
                 <div className='App'>
                 
                 <div >
-                    <Navigation />
+                    <Navigation onRouteChange={this.onRouteChange}/>
                     
                 </div>
                     <div className='tc'>
