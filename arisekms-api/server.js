@@ -5,7 +5,8 @@ const cors = require('cors');
 const knex = require('knex');
 var pg = require('pg');
 
-const postgres = knex({
+//PSQL DB ON NODE 
+const db = knex({
     client: 'pg',
     connection: {
       host : '127.0.0.1',
@@ -16,16 +17,13 @@ const postgres = knex({
     }
   });
 
-// postgres.select('*').from('projects');
-postgres.select('*').from('users').then(data => {
-    console.log(data);
-});  
 
 
 const app = express();
-
 app.use(bodyParser.json());
 app.use(cors());
+
+//LOCAL DATABASE
 const database = {
     users: [
         {
@@ -175,10 +173,12 @@ const database = {
     ]
 }
 
+//INDEX
 app.get('/', (req, res) => {
     res.send(database.users);
 })
 
+//SIGNIN USER
 app.post('/signin', ( req , res ) => {
     if (req.body.email == database.users[0].email &&
         req.body.password == database.users[0].password) {
@@ -188,14 +188,33 @@ app.post('/signin', ( req , res ) => {
         }
 })
 
+//REGISTER USER
 app.post('/register', ( req , res ) => {
     const { email, name, password } = req.body;
-    db
+    db('users').insert({
+        email: email,
+        name: name,
+        joined: new Date()
+    }).then(console.log)
     res.json(database.users[database.users.length-1]);
 })
 
+//ADD PROJECT FORM
 app.put('/profile/:id/form', ( req , res ) => {
     const { id, title, type, desc, status, category, sdg, location, start, end} = req.body;
+    db('projects').insert({
+        id: id,
+        title: title, 
+        type: type, 
+        desc: desc, 
+        status: status,
+        category: category,
+        sdg: sdg, 
+        location: location,
+        start: start,
+        end: end 
+    }).then(console.log);
+
     let found = false;
     database.users.forEach(user => {
         if (user.id === id) {
@@ -223,6 +242,7 @@ app.put('/profile/:id/form', ( req , res ) => {
 
 })
 
+//VIEW PROJECT DETAILS
 app.get('/profile/:id/project/:id', ( req  , res ) => {
     const { id } = req.params;
     let found = false;
@@ -237,6 +257,7 @@ app.get('/profile/:id/project/:id', ( req  , res ) => {
     }
 })
 
+//LIST PROJECTS
 app.get('/profile/:id/projects', ( req , res ) => {
     const { id } = req.params;
     let found = false;
@@ -257,9 +278,13 @@ app.listen(3001, () => {
     console.log('app is running on port 3001');
 });
 
+//SEARCH RESULTS
+
+//VIEW DASHBOARD
+
 /*
 /searchfilter --> POST = project true/false
 /form --> POST = project
 /projects/:projectId --> GET = project
-/dashboard --> PUT --> metrics --> reports
+/dashboard --> PUT --> metrics = reports
 */
