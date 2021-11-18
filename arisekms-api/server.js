@@ -2,6 +2,25 @@ const fs = require('fs');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const knex = require('knex');
+var pg = require('pg');
+
+const postgres = knex({
+    client: 'pg',
+    connection: {
+      host : '127.0.0.1',
+      port : 5432,
+      user : 'postgres',
+      password : 'admin',
+      database : 'postgres'
+    }
+  });
+
+// postgres.select('*').from('projects');
+postgres.select('*').from('users').then(data => {
+    console.log(data);
+});  
+
 
 const app = express();
 
@@ -171,14 +190,7 @@ app.post('/signin', ( req , res ) => {
 
 app.post('/register', ( req , res ) => {
     const { email, name, password } = req.body;
-    database.users.push({
-            id: '3',
-            name: name,
-            email: email,
-            password: password,
-            role: 'member',
-            joined: new Date()
-    })
+    db
     res.json(database.users[database.users.length-1]);
 })
 

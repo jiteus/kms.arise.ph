@@ -30,18 +30,22 @@ class App extends Component {
         this.setState({projects: projects})
     }
 
-    loadUser = (data) => {
-        this.setState({user:{
-            id: data.id,
-            name: data.name,
-            email: data.email,
-            password: '*******',
-            role: data.role,
-            org: data.org,
-            joined: data.joined,
-            projects:data.projects
-        }})
-    }
+//TRACK 1 USER
+    // loadUser = (data) => {
+    //     this.setState({user:{
+    //         id: data.id,
+    //         name: data.name,
+    //         email: data.email,
+    //         password: '*******',
+    //         role: data.role,
+    //         org: data.org,
+    //         joined: data.joined,
+    //         projects:data.projects
+    //     }})
+    // }
+    onRouteChange = () => {
+         this.setState({route: 'home'});
+     }
 
     onSearchChange = (event) => {
         this.setState({searchfield: event.target.value})
@@ -57,9 +61,7 @@ class App extends Component {
 
     // }
 
-    onRouteChange = () => {
-        this.setState({route: 'home'});
-    }
+
     
     render () {
         const {projects, searchfield} = this.state;
@@ -84,7 +86,9 @@ class App extends Component {
                         
                         <Scroll style={{height:'400px'}}>
                             <ErrBoundry>
-                                <h1 className='f2'>My Projects ({projects.length})</h1>
+                                <h1 className='f2'>My Projects 
+                                {/* ({this.setState(Object.assign(this.state.user, {'projects.length'}))) */}
+                                </h1>
                                 <ProjectList projects={filterProjects}/>
                             </ErrBoundry>    
                         </Scroll>
@@ -96,7 +100,7 @@ class App extends Component {
                         <h1>New Project Submission</h1>
                             <AddProjectForm 
                                 onInputChange={this.onInputChange}
-                                onButtonSubmit={this.onButtonSubmit}
+                                onButtonSubmit={this.onRouteChange}
                             />
                         </Scroll>
                         <Footer />  

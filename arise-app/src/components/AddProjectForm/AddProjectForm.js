@@ -57,31 +57,28 @@ import './AddProjectForm.css';
         this.setState({end: event.target.value})
     }
 
-    onSubmitForm = () => {
-        fetch('http://localhost:3001/form', {
-            method: 'post',
-            header: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-                title: this.state.title,
-                type: this.state.type,
-                desc: this.state.desc,
-                status: this.state.status,
-                category: this.state.category,
-                sdg: this.state.sdg,
-                location: this.state.location,
-                start: this.state.start,
-                end: this.state.end,
-            })
-        })
-        .then(response => response.json())
-        .then(user => {
-            if (user) {
-                this.props.loadUser(user)
-                this.props.onRouteChange('home');
-            }
-        })
-        
+    onClick = () => {
+        this.props.onRouteChange('home');
     }
+    
+    //SUBMIT FORM FUNCTION
+    // onSubmitForm = () => {
+    //     fetch('http://localhost:3001/form', {
+    //         method: 'put',
+    //         header: {'Content-Type': 'application/json'},
+    //         body: JSON.stringify({
+    //                id: this.state.user.id
+    //         })
+    //     })
+    //     .then(response => response.json())
+    //     .then(user => {
+    //         if (user) {
+    //             this.props.loadUser(user)
+    //             this.props.onRouteChange('home');
+    //         }
+    //     })
+        
+    // }
   
 
     render(){
@@ -219,7 +216,7 @@ import './AddProjectForm.css';
                         </fieldset>
 
 
-                        <button onClick={this.onSubmitForm}>
+                        <button onClick={this.onClick}>
                          Submit Project </button>
                     </form>
                 </div>
