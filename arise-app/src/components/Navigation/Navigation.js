@@ -2,7 +2,7 @@ import React from "react";
 import Tilt from 'react-parallax-tilt';
 import './Navigation.css';
 import logo from './logo.png';
-// import avatar from './avatar.png';
+
 
 const Navigation = ({onRouteChange}) => {
      return (

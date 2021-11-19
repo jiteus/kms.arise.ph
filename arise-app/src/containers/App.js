@@ -1,15 +1,15 @@
 
 import React, {Component} from 'react';
-import { projects } from '../projects';
-import { sdg } from '../sdg';
-import ProjectList from '../components/Projects/ProjectList';
+import { projects } from '../components/ViewProject/projects';
+import { sdg } from '../components/Sendai/sdg';
+import ProjectList from '../components/ViewProject/ProjectList';
 import CardList from '../components/Sendai/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import './App.css';
 import ErrBoundry from '../components/ErrBoundry';
 import Navigation from '../components/Navigation/Navigation';
-import AddProjectForm from '../components/AddProjectForm/AddProjectForm';
+import AddProjectForm from '../components/AddProject/AddProjectForm';
 import Footer from '../components/Footer';
 
 

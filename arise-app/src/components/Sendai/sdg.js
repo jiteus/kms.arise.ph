@@ -1,20 +1,20 @@
-import  Logo1 from './images/GT1.svg';
-import  Logo2 from './images/GT2.svg';
-import  Logo3 from './images/GT3.svg';
-import  Logo4 from './images/GT4.svg';
-import  Logo5 from './images/GT5.svg';
-import  Logo6 from './images/GT6.svg';
-import  Logo7 from './images/GT7.svg';
-import  Logo8 from './images/GT8.svg';
-import  Logo9 from './images/GT9.svg';
-import  Logo10 from './images/GT10.svg';
-import  Logo11 from './images/GT11.svg';
-import  Logo12 from './images/GT12.svg';
-import  Logo13 from './images/GT13.svg';
-import  Logo14 from './images/GT14.svg';
-import  Logo15 from './images/GT15.svg';
-import  Logo16 from './images/GT16.svg';
-import  Logo17 from './images/GT17.svg';
+import  Logo1 from './GT1.svg';
+import  Logo2 from './GT2.svg';
+import  Logo3 from './GT3.svg';
+import  Logo4 from './/GT4.svg';
+import  Logo5 from './GT5.svg';
+import  Logo6 from './GT6.svg';
+import  Logo7 from './GT7.svg';
+import  Logo8 from './GT8.svg';
+import  Logo9 from './GT9.svg';
+import  Logo10 from './GT10.svg';
+import  Logo11 from './GT11.svg';
+import  Logo12 from './GT12.svg';
+import  Logo13 from './GT13.svg';
+import  Logo14 from './GT14.svg';
+import  Logo15 from './GT15.svg';
+import  Logo16 from './GT16.svg';
+import  Logo17 from './GT17.svg';
 
 export const sdg = [
     {

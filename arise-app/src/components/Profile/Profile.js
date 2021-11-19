@@ -1,7 +1,7 @@
 
 import React, {Component} from 'react';
-import MemberList from '../components/MemberList';
-import SearchBox from '../components/SearchBox';
+//import Users from '../components/Profile/Users';
+import SearchBox from '../SearchBox';
 import './App.css';
 
 

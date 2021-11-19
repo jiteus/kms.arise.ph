@@ -4,6 +4,9 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const knex = require('knex');
 var pg = require('pg');
+const { DefaultDeserializer } = require('v8');
+const { title } = require('process');
+const { timeStamp } = require('console');
 
 //PSQL DB ON NODE 
 const db = knex({
@@ -18,12 +21,11 @@ const db = knex({
   });
 
 
-
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-//LOCAL DATABASE
+//LOCAL DATABASE SAMPLE
 const database = {
     users: [
         {
@@ -174,35 +176,61 @@ const database = {
 }
 
 //INDEX
-app.get('/', (req, res) => {
-    res.send(database.users);
+app.get('/', () => {
+    console.log('welcome to arise kms portal');
 })
 
 //SIGNIN USER
 app.post('/signin', ( req , res ) => {
-    if (req.body.email == database.users[0].email &&
-        req.body.password == database.users[0].password) {
+    const { email, password } = req.body;
+    // if (email == db.login[0].email &&
+    //     password == db.login[0].password) {
             res.json('success');
-        } else {
-            res.status(400).json('signin error');
-        }
+//         } else {
+//             res.status(400).json('signin error');
+//         }
 })
 
 //REGISTER USER
 app.post('/register', ( req , res ) => {
-    const { email, name, password } = req.body;
-    db('users').insert({
+    const { email, username, password ,org, role, tel, title } = req.body;
+    // db.('login').insert({
+    // email: email, password: password, user_role: role
+    // }),
+    db('users').insert({        
+        name: username,
+        org: org,
+        tel: tel,
         email: email,
-        name: name,
-        joined: new Date()
-    }).then(console.log)
-    res.json(database.users[database.users.length-1]);
+        title: title,
+        joined: new Date(),
+    })
+})
+
+//LIST PROJECTS
+app.get('/projects', ( req , res ) => {
+//const { userid } = req.params;
+        
+    // let found = false;
+    // db.users.forEach (user => {
+    //     if (user.id === id) {
+    //         found = true;
+           
+                db.select('*').from('projects')
+                //.where({user_id: userid})
+                .then(projects => {
+                    console.log(projects);
+                });
+
+
+        
 })
 
 //ADD PROJECT FORM
-app.put('/profile/:id/form', ( req , res ) => {
+app.put('/projects/form', ( req , res ) => {
     const { id, title, type, desc, status, category, sdg, location, start, end} = req.body;
-    db('projects').insert({
+    
+     db('projects').insert({
         id: id,
         title: title, 
         type: type, 
@@ -212,79 +240,41 @@ app.put('/profile/:id/form', ( req , res ) => {
         sdg: sdg, 
         location: location,
         start: start,
-        end: end 
-    }).then(console.log);
-
-    let found = false;
-    database.users.forEach(user => {
-        if (user.id === id) {
-            found = true;
-            database.users.projects.push({
-                id: '4',
-                title: title,
-                type: type,
-                desc: desc,
-                status: status,
-                category: category,
-                sdg: sdg,
-                location: location,
-                start: start,
-                end: end,
-                submitted: new Date()
-        })
-            user.projects++
-            return res.json(database.users[database.users.length]);
-        } 
-    })
-    if (!found) {
-        res.status(400).json('error finding');
-    }
-
+        end: end,
+        submitted: Date('today') 
+    });
+    console.log(db('projects.length'));
 })
 
+
+    
 //VIEW PROJECT DETAILS
-app.get('/profile/:id/project/:id', ( req  , res ) => {
+app.get('/projects/:id', ( req, res ) => {
     const { id } = req.params;
-    let found = false;
-    database.users.forEach(user => {
-        if (user.id === id) {
-            found = true;
-            return res.json(user.projects);
-        } 
-    })
-    if (!found) {
-        res.status(400).json('error finding');
-    }
+    db.select('*').from('projects').where({id})
+    .then(project => {
+        console.log(project[0]);
+    });
+    res.json('success');
 })
+    
 
-//LIST PROJECTS
-app.get('/profile/:id/projects', ( req , res ) => {
-    const { id } = req.params;
-    let found = false;
-    database.users.forEach (user => {
-        if (user.id === id) {
-            found = true;
-            return res.json(user.projects);
-            
-        }
-        })
-        if (!found) {
-            res.status(400).json('error finding');
-        }
-        
-})
 
 app.listen(3001, () => {
     console.log('app is running on port 3001');
 });
 
+
+
 //SEARCH RESULTS
 
 //VIEW DASHBOARD
 
+
+//EDIT PROJECT DETAILS
+
 /*
 /searchfilter --> POST = project true/false
-/form --> POST = project
-/projects/:projectId --> GET = project
 /dashboard --> PUT --> metrics = reports
+/editproject --> PUT
 */
