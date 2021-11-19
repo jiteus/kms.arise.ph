@@ -8,7 +8,7 @@ const { DefaultDeserializer } = require('v8');
 const { title } = require('process');
 const { timeStamp } = require('console');
 
-//PSQL DB ON NODE 
+//CONNECT PSQL DB TO NODE SERVER
 const db = knex({
     client: 'pg',
     connection: {
@@ -25,7 +25,7 @@ const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
-//LOCAL DATABASE SAMPLE
+//LOCAL SAMPLE "FAKE" DATABASE
 const database = {
     users: [
         {
@@ -217,9 +217,9 @@ app.get('/projects', ( req , res ) => {
     //         found = true;
            
                 db.select('*').from('projects')
-                //.where({user_id: userid})
                 .then(projects => {
-                    console.log(projects);
+                    console.log(projects.length);
+                    res.json(projects[0]);
                 });
 
 
@@ -244,6 +244,7 @@ app.put('/projects/form', ( req , res ) => {
         submitted: Date('today') 
     });
     console.log(db('projects.length'));
+    res.json('projects[0]');
 })
 
 

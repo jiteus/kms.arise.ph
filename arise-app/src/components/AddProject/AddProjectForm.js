@@ -57,13 +57,10 @@ import './AddProjectForm.css';
         this.setState({end: event.target.value})
     }
 
-    onClick = () => {
-        this.props.onRouteChange('home');
-    }
-    
+   
     //SUBMIT FORM FUNCTION
     onSubmitForm = () => {
-        fetch('http://localhost:3001/form', {
+        fetch('http://localhost:3001/projects/form', {
              method: 'put',
              header: {'Content-Type': 'application/json'},
              body: JSON.stringify({
@@ -78,7 +75,7 @@ import './AddProjectForm.css';
                 end: this.state.end,
              })
          })
-         .then(response => response.json())
+         .then(alert('Form Successfully Submitted!'))
     }
   
 
@@ -217,7 +214,7 @@ import './AddProjectForm.css';
                         </fieldset>
 
 
-                        <button onClick={this.onClick}>
+                        <button onClick={this.onSubmitForm}>
                          Submit Project </button>
                     </form>
                 </div>
