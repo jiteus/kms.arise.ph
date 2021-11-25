@@ -44,7 +44,7 @@ p{
   height: 180px;
 }
 
-button {
+.form button {
   padding: 3px;
   margin: 2px;
   min-width: 30%;

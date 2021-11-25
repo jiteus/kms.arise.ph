@@ -1,6 +1,7 @@
 
 import React from "react";
 import './AddProjectForm.css';
+// import dateFormat from 'dateformat';
 
  class AddProjectForm extends React.Component {
     
@@ -50,15 +51,40 @@ import './AddProjectForm.css';
     }
 
     onStartChange = (event) => {
+        console.log(this.state.start)
         this.setState({start: event.target.value})
     }
 
     onEndChange = (event) => {
+        // dateFormat(, 'yyyy-mm-dd')
+        console.log(this.state.end)
         this.setState({end: event.target.value})
     }
 
+<<<<<<< Updated upstream:arise-app/src/components/AddProjectForm/AddProjectForm.js
     onClick = () => {
         this.props.onRouteChange('home');
+=======
+   
+    //SUBMIT FORM FUNCTION
+    onSubmitForm = () => {
+        fetch('http://localhost:3001/projects/form', {
+             method: 'POST',
+             headers: {'Content-Type': 'application/json'},
+             body: JSON.stringify({
+                title: this.state.title,
+                type: this.state.type,
+                desc: this.state.desc,
+                status: this.state.status,
+                category: this.state.category,
+                sdg: this.state.category,
+                location: this.state.location,
+                start: new Date(this.state.start),
+                end: new Date(this.state.end)
+             })
+         })
+         .then(alert('Form Successfully Submitted!'))
+>>>>>>> Stashed changes:arise-app/src/components/AddProject/AddProjectForm.js
     }
     
     //SUBMIT FORM FUNCTION
@@ -88,7 +114,7 @@ import './AddProjectForm.css';
                 <p className='f3 black'>Please complete this form to add a New Project</p>
                 
                 <div className='center'>
-                    <form className="form pa4 white">
+                    <form onSubmit={this.onSubmitForm} className="form pa4 white">
                         <fieldset>
                         <div>
                             <label  htmlFor="project_title" className="f4 b db mb2">Project Title <span className="normal black-60">(required)</span></label>
@@ -216,7 +242,11 @@ import './AddProjectForm.css';
                         </fieldset>
 
 
+<<<<<<< Updated upstream:arise-app/src/components/AddProjectForm/AddProjectForm.js
                         <button onClick={this.onClick}>
+=======
+                        <button>
+>>>>>>> Stashed changes:arise-app/src/components/AddProject/AddProjectForm.js
                          Submit Project </button>
                     </form>
                 </div>
